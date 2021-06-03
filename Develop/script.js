@@ -1,36 +1,32 @@
 var currentDayEl = document.querySelector("#currentDay");
 var dateTime = moment();
-//header current date and time 
+var currentHour = moment().hours();
+console.log(currentHour);
 var time = document.querySelector("#currentDay");
 currentDayEl.textContent = dateTime.format("dddd, MMMM Do, h:mm A");
 
 //hour block
-var hourOfDay = document.querySelector(".hour-9");
-hourOfDay.textContent = moment().startOf("hour").set("hour", 9).format("h A");
 
-var hourOfDay = document.querySelector(".hour-10");
-hourOfDay.textContent = moment().startOf("hour").set("hour", 10).format("h A");
+for  (let i = 9; i < 18; i++) {
+    document.querySelector(".hour-" + i).textContent = moment().startOf("hour").set("hour", i).format("h A");
 
-var hourOfDay = document.querySelector(".hour-11");
-hourOfDay.textContent = moment().startOf("hour").set("hour", 11).format("h A");
-
-var hourOfDay = document.querySelector(".hour-12");
-hourOfDay.textContent = moment().startOf("hour").set("hour", 12).format("h A");
-
-var hourOfDay = document.querySelector(".hour-13");
-hourOfDay.textContent = moment().startOf("hour").set("hour", 13).format("h A");
-
-var hourOfDay = document.querySelector(".hour-14");
-hourOfDay.textContent = moment().startOf("hour").set("hour", 14).format("h A");
-
-var hourOfDay = document.querySelector(".hour-15");
-hourOfDay.textContent = moment().startOf("hour").set("hour", 15).format("h A");
-
-var hourOfDay = document.querySelector(".hour-16");
-hourOfDay.textContent = moment().startOf("hour").set("hour", 16).format("h A");
-
-var hourOfDay = document.querySelector(".hour-17");
-hourOfDay.textContent = moment().startOf("hour").set("hour", 17).format("h A");
+    if (i < currentHour) {
+        //Before
+        $("textArea").addClass("past");
+        // Select element with id of i
+        //give that element "past" class
+    } else if (i === currentHour) {
+        //Current
+        $("textArea").addClass("present");
+        //Select element with id of i
+        //give element "present" class
+    } else {
+        // None of the other cases were true so i must be future 
+        $("textArea").addClass("future");
+        //Select element with id of i
+        //give element "future" class
+    }
+};
 
 //save function
 $(document).ready(function () {
@@ -52,26 +48,3 @@ $(document).ready(function () {
     
 
 });
-
-// //audit task background color
-// var auditTask = function(textAreaEl) {
-//     $()
-// }
-
-
-
-//if currentDayEl dateTime  >,=, < hourOfDay, background color for text-area grey, red or green.
-// if (currentDayEl < hourOfDay) {change}
-
-//time.textContent = moment(date, "L").set("hour", 9)
-
-//hours of the day
-// var hourOfDay = moment().startOf("hour").set("hour", 9).format("h A");
-// for (var i = 0; i < hourOfDay.length; i++) {
-
-// }
-
-// console.log(hourOfDay);
-// var hour = document.getElementsByClassName("time-block");
-// hour.textContent = moment().startOf("hour").set("hour", 9).format("h A");
-
