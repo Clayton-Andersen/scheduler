@@ -1,30 +1,25 @@
 var currentDayEl = document.querySelector("#currentDay");
 var dateTime = moment();
 var currentHour = moment().hours();
-console.log(currentHour);
 var time = document.querySelector("#currentDay");
+
 currentDayEl.textContent = dateTime.format("dddd, MMMM Do, h:mm A");
 
-//hour block
 
 for  (let i = 9; i < 18; i++) {
     document.querySelector(".hour-" + i).textContent = moment().startOf("hour").set("hour", i).format("h A");
 
     if (i < currentHour) {
         //Before
-        $("textArea").addClass("past");
+        $(`div#${ i } textarea`).addClass("past");
         // Select element with id of i
-        //give that element "past" class
+        //give that element "past" classgit 
     } else if (i === currentHour) {
         //Current
-        $("textArea").addClass("present");
-        //Select element with id of i
-        //give element "present" class
+        $(`div#${ i } textarea`).addClass("present");
     } else {
         // None of the other cases were true so i must be future 
-        $("textArea").addClass("future");
-        //Select element with id of i
-        //give element "future" class
+        $(`div#${ i } textarea`).addClass("future");
     }
 };
 
