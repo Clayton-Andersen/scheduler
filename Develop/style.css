@@ -32,8 +32,9 @@ textarea{
 
 .row {
   white-space: pre-wrap;
-  height: auto;
-  border-top: 1px solid white;;
+  height: 80px;
+  border-top: 1px solid white;
+  margin-bottom: 25px;
 }
 
 .hour {
