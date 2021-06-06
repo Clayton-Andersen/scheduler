@@ -13,7 +13,7 @@ for  (let i = 9; i < 18; i++) {
         //Before
         $(`div#${ i } textarea`).addClass("past");
         // Select element with id of i
-        //give that element "past" classgit 
+        //give that element "past" class
     } else if (i === currentHour) {
         //Current
         $(`div#${ i } textarea`).addClass("present");
